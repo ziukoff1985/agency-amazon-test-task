@@ -1,10 +1,10 @@
 import { Swiper } from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 
 // Initialize Swiper
 const swiper = new Swiper('.swiper', {
   // Install modules
-  modules: [Navigation],
+  modules: [Navigation, Pagination, Autoplay],
 
   // Enable loop mode for infinite scrolling
   loop: true,
@@ -37,6 +37,18 @@ const swiper = new Swiper('.swiper', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+  // Pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    type: 'bullets', // Використовуємо точки (можна змінити на 'fraction' або 'progressbar')
+  },
+
+  // Autoplay
+  autoplay: {
+    delay: 5000, // Затримка 5 секунд між слайдами
+    disableOnInteraction: false, // Продовжувати автопрокрутку після взаємодії
   },
 
   // Optional: Add smooth transition
