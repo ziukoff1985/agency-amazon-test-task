@@ -66,18 +66,21 @@ h1 {
 
 .logo-1 {
   position: absolute;
+  max-width: 100%;
   top: 49px;
   left: 19px;
 }
 
 .logo-2 {
   position: absolute;
+  max-width: 100%;
   top: 76px;
   left: 26px;
 }
 
 .logo-3 {
   position: absolute;
+  max-width: 230px;
   top: 77px;
   left: 7px;
 }
@@ -135,9 +138,15 @@ h1 {
 /* Add Swiper styles */
 .testimonials-slider {
   position: relative;
-  max-width: 1400px;
+  max-width: 1500px; /* Збільшуємо ширину, щоб вмістити кнопки */
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 20px;
+}
+
+/* ВИПРАВЛЕННЯ: Обгортка для слайдера */
+.swiper-container {
+  position: relative;
+  padding: 0 80px; /* Зменшуємо відступи для кращої видимості */
 }
 
 .swiper {
@@ -178,11 +187,14 @@ h1 {
   background: rgba(255, 255, 255, 0.9);
   width: 50px;
   height: 50px;
+  border: 1px solid #b6b1b1;
   margin-top: -25px;
   border-radius: 50%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  top: 50%;
+  top: 45%;
+  z-index: 20;
+  visibility: visible;
 }
 
 .swiper-button-next:hover,
@@ -198,23 +210,24 @@ h1 {
 }
 
 .swiper-button-next {
-  right: 15px;
+  right: 8px; /* Розміщуємо праву кнопку за межами контейнера */
 }
 
 .swiper-button-prev {
-  left: 15px;
+  left: 8px; /* Розміщуємо ліву кнопку за межами контейнера */
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .testimonials-slider {
-    padding: 0 70px;
+  .swiper-container {
+    padding: 0 60px;
   }
 
   .swiper-button-next,
   .swiper-button-prev {
     width: 45px;
     height: 45px;
+
     margin-top: -22.5px;
   }
 
@@ -225,8 +238,8 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  .testimonials-slider {
-    padding: 0 60px;
+  .swiper-container {
+    padding: 0 50px;
   }
 
   .swiper-button-next,
@@ -242,24 +255,36 @@ h1 {
   }
 
   .swiper-button-next {
-    right: 10px;
+    right: -5px;
   }
 
   .swiper-button-prev {
-    left: 10px;
+    left: -5px;
   }
 }
 
 @media (max-width: 480px) {
-  .testimonials-slider {
-    padding: 0 50px;
+  .swiper-container {
+    padding: 0 45px;
   }
 
-  .swiper-button-next {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+    margin-top: -17.5px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 12px;
+  }
+}
+
+/* .swiper-button-next {
     right: 5px;
   }
 
   .swiper-button-prev {
     left: 5px;
-  }
-}
+  } */
