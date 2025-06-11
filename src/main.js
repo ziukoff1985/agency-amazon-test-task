@@ -46,10 +46,10 @@ const swiper = new Swiper('.swiper', {
   },
 
   // Autoplay
-  autoplay: {
-    delay: 5000, // Затримка 5 секунд між слайдами
-    disableOnInteraction: false, // Продовжувати автопрокрутку після взаємодії
-  },
+  // autoplay: {
+  //   delay: 5000, // Затримка 5 секунд між слайдами
+  //   disableOnInteraction: false, // Продовжувати автопрокрутку після взаємодії
+  // },
 
   // Optional: Add smooth transition
   speed: 400,
