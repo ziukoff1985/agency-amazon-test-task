@@ -1,5 +1,8 @@
 /* Common styles */
 @import url('./reset.css');
+/* Import Swiper styles */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
 
 * {
   margin: 0;
@@ -29,7 +32,7 @@ h1 {
   margin-bottom: 70px;
 }
 
-.list-container {
+/* .list-container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -39,13 +42,16 @@ h1 {
   padding: 0 93px 40px;
   overflow: hidden;
   list-style: none;
-}
+} */
 
 .list-wrapper {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 18px; */
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
@@ -82,7 +88,6 @@ h1 {
   line-height: 1.75;
   color: #9b9a99;
   text-align: left;
-  /* margin-bottom: 61px; */
 }
 
 .author-info {
@@ -125,4 +130,136 @@ h1 {
   display: block;
   margin-left: auto;
   margin-bottom: 20px;
+}
+
+/* Add Swiper styles */
+.testimonials-slider {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50px;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: auto;
+}
+
+.swiper-slide .card {
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure equal height for card content */
+.swiper-slide .card .description {
+  flex-grow: 1;
+}
+
+.swiper-slide .card .author {
+  margin-top: auto;
+}
+
+/* Navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+  background: rgba(255, 255, 255, 0.9);
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  top: 50%;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.swiper-button-next {
+  right: 15px;
+}
+
+.swiper-button-prev {
+  left: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .testimonials-slider {
+    padding: 0 70px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 45px;
+    height: 45px;
+    margin-top: -22.5px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-slider {
+    padding: 0 60px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 14px;
+  }
+
+  .swiper-button-next {
+    right: 10px;
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-slider {
+    padding: 0 50px;
+  }
+
+  .swiper-button-next {
+    right: 5px;
+  }
+
+  .swiper-button-prev {
+    left: 5px;
+  }
 }
